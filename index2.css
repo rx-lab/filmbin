@@ -1,0 +1,770 @@
+/* ============================================
+   Movie Page - Cinematic Dark Theme
+============================================ */
+
+/* ---- Hero Section ---- */
+.movie-hero {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.movie-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center top;
+    filter: blur(22px) brightness(0.4);
+    transform: scale(1.08);
+    transition: background-image 0.5s;
+}
+
+.movie-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 60%, #000 100%);
+}
+
+.movie-hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 40px;
+    align-items: flex-end;
+    padding: 40px 60px 50px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* پوستر */
+.movie-poster-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.movie-poster {
+    width: 200px;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 0 2px rgba(255,255,255,0.08);
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 2/3;
+}
+
+.poster-shine {
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* اطلاعات */
+.movie-meta { flex: 1; }
+
+.movie-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.badge-genre {
+    background: rgba(183, 28, 28, 0.7);
+    border: 1px solid rgba(183,28,28,0.5);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 3px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.badge-quality {
+    background: rgba(255,193,7,0.15);
+    border: 1px solid rgba(255,193,7,0.4);
+    color: #ffc107;
+    font-size: 0.75rem;
+    padding: 3px 12px;
+    border-radius: 20px;
+}
+
+.movie-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    line-height: 1.1;
+}
+
+.movie-title-fa {
+    font-size: 1.1rem;
+    color: #aaa;
+    margin-bottom: 18px;
+}
+
+.movie-stats {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.stat-item .imdb-score {
+    background: #f5c518;
+    color: #000;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.stat-item i { color: #b71c1c; }
+
+.movie-description {
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: #ccc;
+    max-width: 620px;
+    margin-bottom: 28px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* دکمه‌های اکشن */
+.movie-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-watch {
+    padding: 14px 36px;
+    background: #b71c1c;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 6px 24px rgba(183,28,28,0.5);
+}
+
+.btn-watch:hover {
+    background: #e53935;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(183,28,28,0.7);
+}
+
+.btn-trailer {
+    padding: 13px 28px;
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.35);
+    border-radius: 40px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.25s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-trailer:hover {
+    border-color: white;
+    background: rgba(255,255,255,0.08);
+}
+
+.btn-wishlist, .btn-share {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-wishlist:hover, .btn-share:hover {
+    background: rgba(183,28,28,0.4);
+    border-color: #b71c1c;
+}
+
+/* ---- Player Section ---- */
+.player-section {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    padding: 0 30px;
+    animation: fadeUp 0.4s ease both;
+}
+
+.player-wrap {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #0a0a0a;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+}
+
+.fake-player {
+    position: relative;
+    aspect-ratio: 16/9;
+    cursor: pointer;
+}
+
+.fake-player img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.player-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.player-controls-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex: 1;
+}
+
+.ctrl-btn {
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: white;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.2s;
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ctrl-btn.play-main {
+    width: 72px;
+    height: 72px;
+    font-size: 1.6rem;
+    background: #b71c1c;
+    box-shadow: 0 0 30px rgba(183,28,28,0.6);
+}
+
+.ctrl-btn:hover { transform: scale(1.1); background: rgba(255,255,255,0.2); }
+.ctrl-btn.play-main:hover { background: #e53935; transform: scale(1.08); }
+
+.player-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 20px 10px 0;
+    margin: 0 -10px;
+}
+
+.time-current, .time-total { font-size: 0.8rem; color: #ccc; white-space: nowrap; }
+
+.progress-track {
+    flex: 1;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #b71c1c;
+    border-radius: 10px;
+    position: relative;
+}
+
+.progress-dot {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    left: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+
+.player-right-controls {
+    display: flex;
+    gap: 14px;
+    font-size: 1.1rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.player-right-controls i:hover { color: white; }
+
+.player-loading {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(255,255,255,0.15);
+    border-top-color: #b71c1c;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* گزینه‌های پلیر */
+.player-options {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 18px 4px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    margin-top: 16px;
+}
+
+.option-group { display: flex; align-items: center; gap: 12px; }
+
+.option-label {
+    font-size: 0.85rem;
+    color: #888;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.option-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.opt-btn {
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #bbb;
+    border-radius: 20px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.opt-btn.active, .opt-btn:hover {
+    background: rgba(183,28,28,0.3);
+    border-color: #b71c1c;
+    color: white;
+}
+
+/* ---- Details Section ---- */
+.movie-details-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 30px 60px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 40px;
+}
+
+/* تب‌ها */
+.tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 28px;
+}
+
+.tab {
+    padding: 12px 24px;
+    background: none;
+    border: none;
+    color: #888;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.2s;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+}
+
+.tab.active, .tab:hover {
+    color: white;
+    border-bottom-color: #b71c1c;
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeUp 0.3s ease; }
+
+/* اطلاعات فیلم */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 32px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.02);
+    transition: background 0.2s;
+}
+
+.info-row:hover { background: rgba(255,255,255,0.05); }
+
+.info-key { color: #888; font-size: 0.85rem; }
+.info-val { color: #eee; font-size: 0.88rem; font-weight: 600; text-align: left; }
+
+.full-story h3 {
+    font-size: 1.1rem;
+    color: #eee;
+    margin-bottom: 14px;
+    padding-right: 12px;
+    border-right: 4px solid #b71c1c;
+}
+
+.full-story p {
+    font-size: 0.92rem;
+    line-height: 2;
+    color: #bbb;
+}
+
+/* بازیگران */
+.cast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 20px;
+}
+
+.cast-card {
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.cast-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(183,28,28,0.4);
+    background: rgba(183,28,28,0.06);
+}
+
+.cast-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: top;
+}
+
+.cast-card .cast-name {
+    padding: 10px 8px 4px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #eee;
+}
+
+.cast-card .cast-role {
+    padding: 0 8px 10px;
+    font-size: 0.72rem;
+    color: #888;
+}
+
+/* نظرات */
+.comment-form {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.comment-form h3 {
+    font-size: 1rem;
+    margin-bottom: 18px;
+    color: #eee;
+}
+
+.rating-input {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.stars { display: flex; gap: 6px; }
+
+.stars i {
+    font-size: 1.4rem;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.15s, transform 0.15s;
+}
+
+.stars i:hover, .stars i.active { color: #f5c518; transform: scale(1.15); }
+
+.comment-form textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    color: white;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.9rem;
+    padding: 14px;
+    resize: vertical;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.comment-form textarea:focus { border-color: #b71c1c; }
+.comment-form textarea::placeholder { color: #555; }
+
+.btn-submit-comment {
+    margin-top: 14px;
+    padding: 10px 28px;
+    background: #b71c1c;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
+}
+
+.btn-submit-comment:hover { background: #e53935; }
+
+.comment-item {
+    display: flex;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    animation: fadeUp 0.3s ease;
+}
+
+.comment-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b71c1c, #7a1212);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    color: white;
+}
+
+.comment-body { flex: 1; }
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.comment-user { font-weight: 700; font-size: 0.9rem; }
+.comment-date { font-size: 0.78rem; color: #666; }
+
+.comment-stars { color: #f5c518; font-size: 0.8rem; margin-bottom: 8px; }
+
+.comment-text { font-size: 0.88rem; line-height: 1.7; color: #bbb; }
+
+.comment-like {
+    margin-top: 10px;
+    display: flex;
+    gap: 14px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.comment-like span { cursor: pointer; transition: color 0.2s; display: flex; align-items: center; gap: 5px; }
+.comment-like span:hover { color: #b71c1c; }
+
+/* ---- Sidebar ---- */
+.sidebar-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 24px;
+}
+
+.sidebar-title {
+    font-size: 1rem;
+    color: #eee;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* امتیازات */
+.score-block {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.score-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    padding: 14px 8px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: 0.2s;
+}
+
+.score-item:hover { border-color: rgba(183,28,28,0.3); }
+
+.score-logo { font-size: 0.75rem; color: #888; font-weight: 700; }
+.score-val { font-size: 1.5rem; font-weight: 900; color: #fff; }
+.score-count { font-size: 0.7rem; color: #666; }
+
+.score-item.imdb .score-val { color: #f5c518; }
+.score-item.rt .score-val { color: #ff6b35; }
+.score-item.users .score-val { color: #4fc3f7; }
+
+/* اطلاعات سریع */
+.quick-info { display: flex; flex-direction: column; gap: 10px; }
+
+.qi-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.qi-label { color: #777; }
+.qi-val { color: #ddd; font-weight: 600; }
+
+/* فیلم‌های مشابه */
+.related-list { display: flex; flex-direction: column; gap: 14px; }
+
+.related-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.related-item:hover { background: rgba(255,255,255,0.05); }
+
+.related-item img {
+    width: 60px;
+    height: 85px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.related-info { flex: 1; }
+.related-title { font-size: 0.85rem; font-weight: 700; margin-bottom: 4px; }
+.related-meta { font-size: 0.75rem; color: #888; }
+.related-imdb { font-size: 0.75rem; color: #f5c518; margin-top: 4px; }
+
+/* ---- Responsive ---- */
+@media (max-width: 1000px) {
+    .details-grid { grid-template-columns: 1fr; }
+    .details-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .sidebar-card { margin-bottom: 0; }
+}
+
+@media (max-width: 768px) {
+    .movie-hero-content { flex-direction: column; align-items: flex-start; padding: 30px 20px 40px; gap: 24px; }
+    .movie-poster { width: 140px; }
+    .movie-title { font-size: 1.8rem; }
+    .movie-details-section { padding: 0 16px 40px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .details-sidebar { grid-template-columns: 1fr; }
+    .player-section { padding: 0 16px; }
+    .player-options { gap: 16px; }
+}
+
+@media (max-width: 480px) {
+    .cast-grid { grid-template-columns: repeat(3, 1fr); }
+    .score-block { gap: 6px; }
+    .movie-actions { gap: 8px; }
+    .btn-watch { padding: 11px 24px; font-size: 0.9rem; }
+}
