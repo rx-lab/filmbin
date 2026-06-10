@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), 
+                url('img//91armhHyTML.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Cairo', sans-serif;
+}
+
+
+/* ========== استایل فرم ========== */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top:100px;
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(12px);
+    width: 450px;
+    padding: 40px 35px;
+    border-radius: 24px;
+    border: 1px solid rgba(183, 28, 28, 0.3);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    border-color: rgba(183, 28, 28, 0.6);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(183, 28, 28, 0.2);
+}
+
+.form-title {
+    text-align: center;
+    color: #b71c1c;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.container label {
+    color: #e0e0e0;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: -8px;
+    letter-spacing: 0.5px;
+}
+
+.container input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #b71c1c;
+    padding: 12px 5px 8px 5px;
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.container input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+}
+
+.container input:hover {
+    border-bottom-color: #e53935;
+}
+
+.container input:focus {
+    outline: none;
+    border-bottom-color: #e53935;
+    border-bottom-width: 3px;
+    box-shadow: 0 2px 8px rgba(183, 28, 28, 0.3);
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #b71c1c;
+    cursor: pointer;
+}
+
+.checkbox-wrapper label {
+    margin: 0;
+    cursor: pointer;
+    color: #ccc;
+    font-weight: normal;
+}
+
+.register {
+    background: linear-gradient(135deg, #b71c1c, #8b0000);
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 14px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(183, 28, 28, 0.3);
+}
+
+.register:hover {
+    background: linear-gradient(135deg, #c62828, #a00000);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(183, 28, 28, 0.5);
+}
+
+.register:active {
+    transform: translateY(1px);
+}
+
+.login {
+    background: transparent;
+    border: 2px solid #b71c1c;
+    color: #e0e0e0;
+    padding: 12px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 600;
+}
+
+.login:hover {
+    background: rgba(183, 28, 28, 0.15);
+    border-color: #e53935;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ddd;
+    padding: 12px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.google-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #b71c1c;
+    transform: translateY(-2px);
+}
+
+.container a {
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========== ریسپانسیو برای موبایل ========== */
+@media (max-width: 768px) {
+    .ham-menu {
+        display: block;
+    }
+    
+    nav ul li:not(.ham-menu):not(.login-btn):not(.register-btn) {
+        display: none;
+    }
+    
+    .search-box {
+        order: 1;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        width: 95%;
+        padding: 30px 20px;
+        margin-top: 100px;
+    }
+    
+    .form-title {
+        font-size: 24px;
+    }
+    
+    .container a {
+        width: 100% !important;
+    }
+    
+    nav ul {
+        gap: 10px;
+    }
+    
+    .login-btn a, .register-btn a {
+        padding: 6px 12px !important;
+        font-size: 12px;
+    }
+}
